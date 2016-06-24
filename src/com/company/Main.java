@@ -34,11 +34,9 @@ public class Main {
         System.out.println("        _`, :: :__ : : _`, : _`, :: :; :: :.`. _`, :");
         System.out.println("       `.__.'`.__.':_;`.__.'`.__.'`.__.':_;:_;`.__.'");
         System.out.println("=================================================================");
-        try {
-            Thread.sleep(3000);
-        } catch(InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        }
+        delay(1000);
+        System.out.println("              B Y   J A M E S R O N D I N A");
+        delay(1000);
     }
 
     static void mainMenu() {
@@ -72,6 +70,7 @@ public class Main {
                 System.out.println("Thanks for playing!");
                 break;
             default: System.out.println("Please select a valid option!");
+                delay(1500);
                 mainMenu();
         }
     }
@@ -101,6 +100,7 @@ public class Main {
         }
         else {
             System.out.println("Please type a valid option!");
+            delay(1500);
             mainMenu();
         }
 
@@ -212,12 +212,6 @@ public class Main {
 
     }
 
-    /*static void syncHistory() {
-        for (int i = gameHistory.size(); gameHistory.size() < savedResults.size(); i++) {
-                savedResults.add(gameHistory.get(i) + ": Player: " + playerChoice.get(i) + " vs. AI Choice: " + compChoice.get(i));
-        }
-    }*/
-
     static void importHistory() {
         try (BufferedReader read = new BufferedReader(new FileReader("history.txt"))) {
             String line = null;
@@ -245,6 +239,13 @@ public class Main {
             e.fillInStackTrace();
         }
 
+    }
+    static void delay(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
     }
 
 
