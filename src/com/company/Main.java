@@ -35,7 +35,7 @@ public class Main {
         System.out.println("       `.__.'`.__.':_;`.__.'`.__.'`.__.':_;:_;`.__.'");
         System.out.println("=================================================================");
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch(InterruptedException ex) {
             Thread.currentThread().interrupt();
         }
