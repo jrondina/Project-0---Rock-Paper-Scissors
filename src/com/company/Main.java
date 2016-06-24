@@ -16,34 +16,37 @@ public class Main {
 
 
     public static void main(String[] args) {
-        importHistory();
+        File history = new File("history.txt");
+        if (history.exists() && !history.isDirectory()) {
+            importHistory();
+        }
         rpsLogo();
         mainMenu();
         saveHistory();
     }
     static void rpsLogo() {
         System.out.println("=================================================================");
-        System.out.println(".---.  .--.  .--. .-..-. .--.   .---.  .--. .---.  .--. .---.");
-        System.out.println(": .; :: ,. :: .--': :' ;: .--'  : .; :: .; :: .; :: .--': .; :");
-        System.out.println(":   .': :: :: :   :   ' `. `.   :  _.':    ::  _.': `;  :   .'");
-        System.out.println(": :.`.: :; :: :__ : :.`. _`, :  : :   : :: :: :   : :__ : :.`.");
-        System.out.println(":_;:_;`.__.'`.__.':_;:_;`.__.'  :_;   :_;:_;:_;   `.__.':_;:_;");
-        System.out.println("        .--.  .--. .-. .--.  .--.  .--. .---.  .--. ");
-        System.out.println("       : .--': .--': :: .--': .--': ,. :: .; :: .--'");
-        System.out.println("       `. `. : :   : :`. `. `. `. : :: ::   .'`. `. ");
-        System.out.println("        _`, :: :__ : : _`, : _`, :: :; :: :.`. _`, :");
-        System.out.println("       `.__.'`.__.':_;`.__.'`.__.'`.__.':_;:_;`.__.'");
+        System.out.println(ANSI_BLUE + ".---.  .--.  .--. .-..-. .--.   .---.  .--. .---.  .--. .---." + ANSI_RESET);
+        System.out.println(ANSI_BLUE + ": .; :: ,. :: .--': :' ;: .--'  : .; :: .; :: .; :: .--': .; :" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + ":   .': :: :: :   :   ' `. `.   :  _.':    ::  _.': `;  :   .'" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + ": :.`.: :; :: :__ : :.`. _`, :  : :   : :: :: :   : :__ : :.`." + ANSI_RESET);
+        System.out.println(ANSI_BLUE + ":_;:_;`.__.'`.__.':_;:_;`.__.'  :_;   :_;:_;:_;   `.__.':_;:_;" + ANSI_RESET);
+        System.out.println(ANSI_RED + "        .--.  .--. .-. .--.  .--.  .--. .---.  .--. " + ANSI_RESET);
+        System.out.println(ANSI_RED + "       : .--': .--': :: .--': .--': ,. :: .; :: .--'" + ANSI_RESET);
+        System.out.println(ANSI_RED + "       `. `. : :   : :`. `. `. `. : :: ::   .'`. `. " + ANSI_RESET);
+        System.out.println(ANSI_RED + "        _`, :: :__ : : _`, : _`, :: :; :: :.`. _`, :" + ANSI_RESET);
+        System.out.println(ANSI_RED + "       `.__.'`.__.':_;`.__.'`.__.'`.__.':_;:_;`.__.'" + ANSI_RESET);
         System.out.println("=================================================================");
         delay(1000);
-        System.out.println("              B Y   J A M E S R O N D I N A");
+        System.out.println(ANSI_BLUE + "              B Y   J A M E S R O N D I N A" + ANSI_RESET);
         delay(1000);
     }
 
     static void mainMenu() {
         System.out.println("================================================================");
-        System.out.println("                    M A I N  M E N U");
+        System.out.println(ANSI_RED + "                    M A I N  M E N U" + ANSI_RESET);
         System.out.println("================================================================");
-        System.out.println("                     O P T I O N S");
+        System.out.println(ANSI_BLUE + "                     O P T I O N S" + ANSI_RESET);
         System.out.println("================================================================");
         System.out.println("1. Type 'play' to play");
         System.out.println("2. Type 'history' to view game history");
@@ -58,16 +61,16 @@ public class Main {
                 break;
             case "quit":
                 System.out.println("=================================================================");
-                System.out.println("  GGGG   OOOOO   OOOOO  DDDDD      GGGG    AAA   MM    MM EEEEEEE");
-                System.out.println(" GG  GG OO   OO OO   OO DD  DD    GG  GG  AAAAA  MMM  MMM EE     ");
-                System.out.println("GG      OO   OO OO   OO DD   DD  GG      AA   AA MM MM MM EE     ");
-                System.out.println("GG      OO   OO OO   OO DD   DD  GG      AA   AA MM MM MM EEEEE  ");
-                System.out.println("GG   GG OO   OO OO   OO DD   DD  GG   GG AAAAAAA MM    MM EE     ");
-                System.out.println("GG   GG OO   OO OO   OO DD   DD  GG   GG AAAAAAA MM    MM EE     ");
-                System.out.println(" GGGGGG  OOOO0   OOOO0  DDDDDD    GGGGGG AA   AA MM    MM EEEEEEE");
+                System.out.println(ANSI_GREEN + "  GGGG   OOOOO   OOOOO  DDDDD      GGGG    AAA   MM    MM EEEEEEE" + ANSI_RESET);
+                System.out.println(ANSI_GREEN + " GG  GG OO   OO OO   OO DD  DD    GG  GG  AAAAA  MMM  MMM EE     " + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "GG      OO   OO OO   OO DD   DD  GG      AA   AA MM MM MM EE     " + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "GG      OO   OO OO   OO DD   DD  GG      AA   AA MM MM MM EEEEE  " + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "GG   GG OO   OO OO   OO DD   DD  GG   GG AAAAAAA MM    MM EE     " + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "GG   GG OO   OO OO   OO DD   DD  GG   GG AAAAAAA MM    MM EE     " + ANSI_RESET);
+                System.out.println(ANSI_GREEN + " GGGGGG  OOOO0   OOOO0  DDDDDD    GGGGGG AA   AA MM    MM EEEEEEE" + ANSI_RESET);
                 System.out.println("=================================================================");
                 System.out.println();
-                System.out.println("Thanks for playing!");
+                System.out.println(ANSI_BLUE + "Thanks for playing!" + ANSI_RESET);
                 break;
             default: System.out.println("Please select a valid option!");
                 delay(1500);
@@ -108,9 +111,10 @@ public class Main {
 
     static void history() {
         System.out.println("========================================");
-        System.out.println("        G A M E  H I S T O R Y");
+        System.out.println(ANSI_RED + "        G A M E  H I S T O R Y" + ANSI_RESET);
         System.out.println("========================================");
-        if (savedResults.size() == 0) {
+
+        if ((gameHistory.size() == 0) && (savedResults.size() == 0)) {
             System.out.println("No Games Played!");
         }
         else if (gameHistory.size() == 0) {
@@ -170,7 +174,7 @@ public class Main {
 
     static int oppAI(){
         Random randomGenerator = new SecureRandom();
-        int aiChoice = randomGenerator.nextInt(2);
+        int aiChoice = randomGenerator.nextInt(3);
         if (aiChoice == 0) {
             compChoice.add("Rock");
             System.out.println("AI chose rock");
@@ -213,6 +217,7 @@ public class Main {
     }
 
     static void importHistory() {
+
         try (BufferedReader read = new BufferedReader(new FileReader("history.txt"))) {
             String line = null;
             while ((line = read.readLine()) != null) {
@@ -247,6 +252,16 @@ public class Main {
             Thread.currentThread().interrupt();
         }
     }
+
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 
 
 }
